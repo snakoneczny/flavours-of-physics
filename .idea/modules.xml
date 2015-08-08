@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Flavours of Physics.iml" filepath="$PROJECT_DIR$/.idea/Flavours of Physics.iml" />
+      <module fileurl="file://D:/MLiP/kaggle-otto-product-classification/.idea/OttoProductClassification.iml" filepath="D:/MLiP/kaggle-otto-product-classification/.idea/OttoProductClassification.iml" />
+    </modules>
+  </component>
+</project>
