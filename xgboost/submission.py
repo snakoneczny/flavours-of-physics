@@ -10,19 +10,37 @@ folder = '../data/'
 train = pandas.read_csv(folder + 'training.csv', index_col='id')
 
 # Define features to drop from train data
-variables_to_drop = ['mass', 'production', 'min_ANNmuon', 'signal', 'SPDhits', 'IP', 'IPSig', ]
+# variables_to_drop = ['mass', 'production', 'min_ANNmuon', 'signal', 'SPDhits', 'IP', 'IPSig', ]
+# variables_to_drop = ['mass', 'production', 'min_ANNmuon', 'signal',
+#                      'SPDhits', 'p0_p', 'p1_p', 'p2_p', 'p0_eta', 'p1_eta', 'p2_eta', ]
+variables_to_drop = ['mass', 'production', 'min_ANNmuon', 'signal',
+                     'SPDhits', ]
+
 
 # Train xgb model on train data
 train_X = train.drop(variables_to_drop, 1).values
 train_y = train['signal'].values
 xg_train = xgb.DMatrix(train_X, label=train_y)
 
-param = {'silent': 1, 'nthread': 2, 'objective': 'binary:logistic', 'eval_metric': 'auc',
-         'max_depth': 6, 'eta': 0.3}
-n_rounds = 152
+# params = {'silent': 1, 'nthread': 2, 'objective': 'binary:logistic', 'eval_metric': 'auc',
+#          'max_depth': 6, 'eta': 0.3}
+
+params = {'objective': 'binary:logistic',
+          'eta': 0.3,
+          'max_depth': 5,
+          'min_child_weight': 3,
+          'silent': 1,
+          'subsample': 0.7,
+          'colsample_bytree': 0.7,
+          'seed': 1,
+          'nthread': 2}
+num_trees = 250
+
+n_rounds = 120
 watchlist = [(xg_train, 'train')]
 
-xgb_model = xgb.train(param, xg_train, n_rounds, watchlist)
+xgb_model = xgb.train(params, xg_train, num_trees, watchlist)
+# xgb_model = xgb.train(params, xg_train, n_rounds, watchlist)
 
 # Check agreement test
 check_agreement = pandas.read_csv(folder + 'check_agreement.csv', index_col='id')

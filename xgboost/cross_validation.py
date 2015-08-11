@@ -12,10 +12,12 @@ folder = '../data/'
 train = pandas.read_csv(folder + 'training.csv', index_col='id')
 
 # Define features to drop from train data
-variables_to_drop = ['mass', 'production', 'min_ANNmuon', 'signal', 'SPDhits', 'IP', 'IPSig', ]
+# variables_to_drop = ['mass', 'production', 'min_ANNmuon', 'signal', 'SPDhits', 'IP', 'IPSig', ]
+variables_to_drop = ['mass', 'production', 'min_ANNmuon', 'signal',
+                     'SPDhits', 'p0_p', 'p1_p', 'p2_p', 'p0_eta', 'p1_eta', 'p2_eta', ]
 
 # Parameters space creation
-params = [[6], [0.3]]
+params = [[6, 20, 50], [0.3, 0.1, 0.04]]
 params_space = []
 for i in xrange(len(params[0])):
     for j in xrange(len(params[1])):
@@ -27,7 +29,7 @@ grid_best_iterations = []
 for params in params_space:
 
     # Cross validation
-    skf = StratifiedKFold(train['signal'].values, 10, shuffle=False)
+    skf = StratifiedKFold(train['signal'].values, 8, shuffle=False)
     errors = []
     best_iterations = []
     for i_train, i_test in skf:
