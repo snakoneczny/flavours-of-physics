@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://D:/Przetwarzanie grafiki i muzyki/Bezkontekstowe/.idea/Bezkontekstowe.iml" filepath="D:/Przetwarzanie grafiki i muzyki/Bezkontekstowe/.idea/Bezkontekstowe.iml" />
+      <module fileurl="file://D:/Przetwarzanie grafiki i muzyki/Dwa obrazy/.idea/Dwa obrazy.iml" filepath="D:/Przetwarzanie grafiki i muzyki/Dwa obrazy/.idea/Dwa obrazy.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Flavours of Physics.iml" filepath="$PROJECT_DIR$/.idea/Flavours of Physics.iml" />
+      <module fileurl="file://D:/Teoria informacji/Morse/.idea/Morse.iml" filepath="D:/Teoria informacji/Morse/.idea/Morse.iml" />
       <module fileurl="file://D:/MLiP/kaggle-otto-product-classification/.idea/OttoProductClassification.iml" filepath="D:/MLiP/kaggle-otto-product-classification/.idea/OttoProductClassification.iml" />
+      <module fileurl="file://D:/Przetwarzanie grafiki i muzyki/Wstep/.idea/Wstep.iml" filepath="D:/Przetwarzanie grafiki i muzyki/Wstep/.idea/Wstep.iml" />
     </modules>
   </component>
 </project>

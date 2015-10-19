@@ -5,5 +5,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="OttoProductClassification" />
+    <orderEntry type="module" module-name="Wstep" />
+    <orderEntry type="module" module-name="Bezkontekstowe" />
+    <orderEntry type="module" module-name="Morse" />
+    <orderEntry type="module" module-name="Dwa obrazy" />
   </component>
 </module>

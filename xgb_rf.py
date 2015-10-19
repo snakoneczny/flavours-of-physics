@@ -17,15 +17,15 @@ rf = RandomForestClassifier(n_estimators=100, random_state=1)
 rf.fit(train[features], train["signal"])
 
 print("Train a XGBoost model")
-params = {"objective": "binary:logistic",
-          "eta": 0.3,
-          "max_depth": 5,
-          "min_child_weight": 3,
-          "silent": 1,
-          "subsample": 0.7,
-          "colsample_bytree": 0.7,
-          "seed": 1}
-num_trees = 250
+params = {'objective': 'binary:logistic',
+          'eta': 0.1,
+          'max_depth': 5,
+          'min_child_weight': 3,
+          'silent': 1,
+          'subsample': 0.7,
+          'colsample_bytree': 0.7,
+          'seed': 1}
+num_trees = 310
 gbm = xgb.train(params, xgb.DMatrix(train[features], train["signal"]), num_trees)
 
 print("Make predictions on the test set")
